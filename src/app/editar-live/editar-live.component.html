@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Editar live</h1>
+<div mat-dialog-content>
+  <form class="example-form" >
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Nome</mat-label>
+      <input matInput name ="nome" [(ngModel)]="live.nome">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Canal</mat-label>
+      <input matInput name ="canal" [(ngModel)]="live.canal">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Link</mat-label>
+      <input matInput name ="link" [(ngModel)]="live.link">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Choose a date</mat-label>
+      <input name ="data" [(ngModel)]="live.data" matInput  [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="salvar()">Salvar</button>
+
+  <button mat-button color="accent" mat-button-close>Cancel</button>
+</div>

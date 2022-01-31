@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Nova live</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="liveForm">
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" name="nome">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Canal</mat-label>
+      <input matInput formControlName="canal" name="canal">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Link</mat-label>
+      <input matInput formControlName="link" name="link">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" color="accent">
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName="data" name="data" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent"(click)="saveLive()">Salvar</button>
+
+  <button mat-button color="accent"(click)="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,86 @@
+<mat-tab-group mat-align-tabs="start" color="accent"  style="padding:1% 1% 1% 1% ">
+  <mat-tab label="Hoje">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding:1% 1% 1% 1% ">
+      <ng-container fxFlex="20%" *ngFor="let live of livesToday" >
+        <mat-card class="mat-elevation-z4"
+                  fxFlex="0 1 calc(25% - 11px)"
+                  fxFlex.lt-md="0 1 calc(50% - 11px)"
+                  fxFlex.lt-sm="100%" style="margin:1% 1% 1% 1% ">
+          <mat-card-title class="mat-card-title-live">
+            <p>  <span fxFlex="70" style="font-size:1.2rem;" fxLayoutAlign="start center">{{live.nome}}</span>
+              <span fxFlex></span>
+            <p> <span style="font-size:0.7rem; padding: 0.5% 1% 1% 0.5% ;">Canal: {{live.canal}}</span></p>
+          </mat-card-title>
+          <mat-card-content fxLayoutAlign="center center">
+            <iframe width="540" height="260" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          </mat-card-content>
+<mat-card-actions align="end">
+  <mat-icon (click)="openEdit(live)">edit</mat-icon>
+  <mat-icon (click)="deletarLive(live.id)">delete</mat-icon>
+
+</mat-card-actions>
+        </mat-card>
+
+
+
+      </ng-container>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Próximas">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding:1% 1% 1% 1% ">
+    <ng-container fxFlex="20%" *ngFor="let live of livesNext" >
+      <mat-card class="mat-elevation-z4"
+                fxFlex="0 1 calc(25% - 11px)"
+                fxFlex.lt-md="0 1 calc(50% - 11px)"
+                fxFlex.lt-sm="100%" style="margin:1% 1% 1% 1% ">
+        <mat-card-title class="mat-card-title-live">
+          <p>  <span fxFlex="70" style="font-size:1.2rem;" fxLayoutAlign="start center">{{live.nome}}</span>
+            <span fxFlex></span>
+            <span fxFlex="25" style="font-size:0.7rem;" fxLayoutAlign="end center">{{live.data | localDateTime}}</span></p>
+          <p><span style="font-size:0.7rem;">Canal: {{live.canal}}</span></p>
+        </mat-card-title>
+        <mat-card-content fxLayoutAlign="center center">
+          <iframe width="540" height="260" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </mat-card-content>
+        <mat-card-actions align="end">
+        <mat-icon (click)="openEdit(live)">edit</mat-icon>
+        <mat-icon (click)="deletarLive(live.id)">delete</mat-icon>
+      
+      </mat-card-actions>
+      </mat-card>
+
+
+
+    </ng-container>
+  </div> </mat-tab>
+  <mat-tab label="Realizadas">  <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding:1% 1% 1% 1% ">
+    <ng-container fxFlex="20%" *ngFor="let live of livesPrevious" >
+      <mat-card class="mat-elevation-z4"
+                fxFlex="0 1 calc(25% - 11px)"
+                fxFlex.lt-md="0 1 calc(50% - 11px)"
+                fxFlex.lt-sm="100%" style="margin:1% 1% 1% 1% ">
+        <mat-card-title class="mat-card-title-live">
+          <p>  <span fxFlex="70" style="font-size:1.2rem;" fxLayoutAlign="start center">{{live.nome}}</span>
+            <span fxFlex></span>
+            <span fxFlex="25" style="font-size:0.7rem;" fxLayoutAlign="end center">{{live.data | localDateTime}}</span></p>
+          <p><span style="font-size:0.7rem;">Canal: {{live.canal}}</span></p>
+        </mat-card-title>
+        <mat-card-content fxLayoutAlign="center center">
+          <iframe width="540" height="260" [src]="live.urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </mat-card-content>
+       <mat-card-actions align="end">
+        <mat-icon (click)="openEdit(live)">edit</mat-icon>
+        <mat-icon (click)="deletarLive(live.id)">delete</mat-icon>
+      
+      </mat-card-actions>
+      </mat-card>
+
+
+
+    </ng-container>
+  </div> </mat-tab>
+</mat-tab-group>
+<script src="https://www.youtube.com/iframe_api"></script>
+

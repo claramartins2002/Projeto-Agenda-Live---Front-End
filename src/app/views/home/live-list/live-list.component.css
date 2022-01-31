@@ -1,0 +1,16 @@
+.mat-card-live {
+border: 1px solid #CFD8DC;
+border-radius: 4px 3px 6px/2px 4px;
+
+padding: 1%;
+margin: 1%;
+}
+.mat-card-title-live{
+padding: 1%;
+margin-bottom:0px;
+min-height:70px;
+}
+.mat-chip-date {
+background-color: pink;
+color: black !important;
+padding: 1% 1% 1% 1%;}

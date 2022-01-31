@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Confirmação</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Tem certeza que deseja excluir a live?</h3>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Não</button>
+    <button mat-button (click)="deletar()" cdkFocusInitial>Sim</button>
+  </mat-dialog-actions>
